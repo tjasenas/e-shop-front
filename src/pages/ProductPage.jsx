@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Wrapper from "../components/Ul/Wrapper";
 import axios from "axios";
 
 export default function ProductPage() {
@@ -21,7 +20,7 @@ export default function ProductPage() {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       <div className="bg-slate-400 p-4">
         <div className="grid grid-cols-2 gap-8 mb-8">
           <img src={img_url} alt="" />
@@ -38,6 +37,6 @@ export default function ProductPage() {
         <h3 className="text-3xl mb-4">Aprasymas</h3>
         <p className="mb-2">{description}</p>
       </div>
-    </Wrapper>
+    </>
   );
 }

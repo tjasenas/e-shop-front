@@ -1,9 +1,8 @@
 import React from "react";
-import Wrapper from "../components/Ul/Wrapper";
 
 export default function Register() {
   return (
-    <Wrapper>
+    <>
       <h1 className="text-2xl my-6">Prisijungimas</h1>
       <form>
         <div className="mb-4">
@@ -34,6 +33,6 @@ export default function Register() {
           Login
         </button>
       </form>
-    </Wrapper>
+    </>
   );
 }

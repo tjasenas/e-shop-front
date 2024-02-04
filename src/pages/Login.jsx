@@ -1,6 +1,5 @@
 import React from "react";
 import * as Yup from "yup";
-import Wrapper from "../components/Ul/Wrapper";
 import axios from "axios";
 import { useFormik } from "formik";
 import InputField from "../components/Ul/InputField";
@@ -38,7 +37,7 @@ export default function Login() {
   }
 
   return (
-    <Wrapper>
+    <>
       <h1 className="text-2xl my-6">Prisijungimas</h1>
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-4">
@@ -51,6 +50,6 @@ export default function Login() {
           Login
         </button>
       </form>
-    </Wrapper>
+    </>
   );
 }

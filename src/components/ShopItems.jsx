@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../store/AuthCtx";
+import toast from "react-hot-toast";
 
 export default function ShopItems({ product }) {
   const { id, title, description, price, rating, stock, cat_id, img_url } = product;
+  const { addToCart } = useAuthContext();
+
+  function addToCartHandler(item) {
+    addToCart(item);
+    toast.success("Produktas pridėtas!");
+  }
 
   return (
     <div className="bg-slate-400 p-4">
@@ -14,6 +22,7 @@ export default function ShopItems({ product }) {
       <Link className="bg-blue-600 py-1 px-4 rounded text-white inline-block" to={`/product/${id}`}>
         Pirkti produkta
       </Link>
+      <button onClick={() => addToCartHandler(product)}>Pridėti į Krepšeli</button>
     </div>
   );
 }

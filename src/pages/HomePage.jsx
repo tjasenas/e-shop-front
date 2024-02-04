@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Wrapper from "../components/Ul/Wrapper";
 import axios from "axios";
 import ShopItems from "../components/ShopItems";
 
@@ -19,9 +18,9 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Wrapper>
+    <>
       <h1 className="text-2xl my-6">Parduotuvė</h1>
-      <div className="grid grid-cols-3 gap-4">{items.length && items.map((product) => <ShopItems product={product} />)}</div>
-    </Wrapper>
+      <div className="grid grid-cols-3 gap-4">{items.length && items.map((product) => <ShopItems key={product.id} product={product} />)}</div>
+    </>
   );
 }
